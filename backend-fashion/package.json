@@ -2,32 +2,45 @@
   "name": "backend-fashion",
   "version": "1.0.0",
   "type": "commonjs",
-  "main": "dist/server.js",
-
+  "main": "dist/app.js",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "dev": "ts-node-dev --respawn --files -r tsconfig-paths/register src/app.ts",
     "build": "tsc",
-    "start": "node -r module-alias/register dist/server.js"
+    "start": "node -r module-alias/register dist/app.js"
   },
-
   "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mariadb": "^3.5.2",
     "module-alias": "^2.3.4",
     "morgan": "^1.10.1",
-    "prisma": "^7.8.0"
+    "multer": "^2.2.0",
+    "nodemailer": "^8.0.10",
+    "prisma": "^7.8.0",
+    "zod": "^4.4.3"
   },
-
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.1.0",
     "@types/node": "^25.9.1",
+    "@types/nodemailer": "^8.0.0",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^6.0.3",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Backend",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-r", "ts-node/register",
+        "-r", "tsconfig-paths/register"
+      ],
+      "args": ["${workspaceFolder}/backend-fashion/src/app.ts"],
+      "cwd": "${workspaceFolder}/backend-fashion",
+      "env": {
+        "TS_NODE_PROJECT": "${workspaceFolder}/backend-fashion/tsconfig.json"
+      },
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"]
+    }
+  ]
+}

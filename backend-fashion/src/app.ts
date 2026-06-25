@@ -1,17 +1,40 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import bodyParser from "body-parser";
-import "dotenv/config";
+import cookieParser from "cookie-parser";
+import morgan from "morgan";
+import helmet from "helmet";
+import { corsOptions } from "@/config/cors.config";
+import webRouter from "@/routes";
+import { env } from "@/config/env.config";
+import { errorHandler, notFoundHandler } from "@/middlewares/error.middleware";
+import { prisma } from "./config/db.config";
+import main from "@/data/seed";
 
 export const app = express();
 
-//configure cors
-app.use(cors());
+// let x = 0;
+// if (x === 0) {
+//   main()
+//     .catch(console.error)
+//     .finally(async () => {
+//       await prisma.$disconnect();
+//     });
+//   x++;
+// }
 
-//configure body parser
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.json());
+app.use(helmet());
+app.use(cors(corsOptions));
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+webRouter(app);
+
+app.use(notFoundHandler);
+app.use(errorHandler);
+
+app.listen(env.PORT, () => {
+  console.log(`Server running on port ${env.PORT} [${env.NODE_ENV}]`);
 });

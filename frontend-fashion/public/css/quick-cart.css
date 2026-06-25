@@ -1,0 +1,252 @@
+/* ===== PANEL (Bootstrap modal lo backdrop + animation hiện/ẩn) ===== */
+/* Nới rộng dialog cho thoáng (modal mặc định ~500px). */
+#quickView .modal-dialog {
+    max-width: 600px;
+}
+
+/* .quick-cart-modal nằm trên .modal-content.
+   Không tự cuộn nội bộ -> để .modal của Bootstrap cuộn cả dialog kèm lề,
+   tránh bị cắt padding-bottom khi nội dung cao. */
+.quick-cart-modal {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 30px 32px 32px;
+    position: relative;
+    cursor: default;
+}
+
+/* ===== CLOSE ===== */
+.quick-cart-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
+    line-height: 1;
+    color: #111;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 2;
+    transition: color 0.2s ease;
+}
+
+.quick-cart-close:hover {
+    color: var(--primary, #ff6f61);
+}
+
+/* ===== HEADER: ảnh + tên + giá ===== */
+.quick-cart-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-right: 28px;
+}
+
+.quick-cart-image {
+    width: 112px;
+    height: 112px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.quick-cart-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quick-cart-title-wrap {
+    display: grid;
+    gap: 10px;
+    flex: 1;
+}
+
+.quick-cart-modal .product-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0;
+    color: #111;
+}
+
+.quick-cart-modal .product-title .link:hover {
+    color: var(--primary, #ff6f61);
+}
+
+.quick-cart-modal .price-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.quick-cart-modal .price-new {
+    color: var(--primary, #ff6f61);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.quick-cart-modal .price-old {
+    text-decoration: line-through;
+    color: #9a9a9a;
+    font-size: 16px;
+}
+
+.quick-cart-modal .badge-sale {
+    background: var(--primary, #ff6f61);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 30px;
+    line-height: 1;
+}
+
+/* ===== DIVIDER ===== */
+.quick-cart-divider {
+    border: none;
+    border-top: 1px solid var(--line, #ebebeb);
+    margin: 0 0 22px;
+}
+
+/* ===== BLOCK chung ===== */
+.qc-block {
+    margin-bottom: 22px;
+}
+
+.qc-label {
+    font-size: 16px;
+    color: var(--text, #545454);
+    margin-bottom: 12px;
+}
+
+.qc-label strong {
+    color: #111;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-left: 4px;
+}
+
+/* ===== COLOR ===== */
+.qc-color-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.qc-color-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.25s ease;
+}
+
+.qc-color-btn .swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #e2e2e2;
+    display: block;
+}
+
+.qc-color-btn:hover,
+.qc-color-btn.active {
+    border-color: #111;
+}
+
+/* ===== SIZE ===== */
+.qc-size-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.qc-size-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line, #ebebeb);
+    background: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.qc-size-btn:hover,
+.qc-size-btn.active {
+    border-color: #111;
+}
+
+/* ===== QUANTITY (dùng .wg-quantity của theme) ===== */
+.qc-quantity .wg-quantity {
+    display: inline-flex;
+}
+
+/* ===== ACTIONS ===== */
+.action-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 26px;
+    margin-bottom: 14px;
+}
+
+.action-row .add-cart-btn {
+    flex: 1;
+}
+
+.action-row .box-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line, #ebebeb);
+    color: #111;
+    font-size: 18px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.action-row .box-icon:hover {
+    border-color: #111;
+    color: var(--primary, #ff6f61);
+}
+
+/* ===== BUY IT NOW ===== */
+.quick-cart-modal .buy-now-btn {
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 575px) {
+    .quick-cart-modal {
+        padding: 24px 18px 26px;
+    }
+
+    .quick-cart-header {
+        gap: 14px;
+    }
+
+    .quick-cart-image {
+        width: 88px;
+        height: 88px;
+    }
+
+    .quick-cart-modal .product-title {
+        font-size: 18px;
+    }
+}

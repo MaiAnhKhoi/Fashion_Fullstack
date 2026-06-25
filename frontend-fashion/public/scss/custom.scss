@@ -1,0 +1,174 @@
+@keyframes infiniteslide17418080312321156 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1440px, 0, 0);
+  }
+}
+.tf-brand {
+  &:hover {
+    animation-play-state: paused !important;
+  }
+}
+// .sw-height .swiper-slide {
+//   height: 100% !important;
+// }
+.menuActive {
+  color: var(--primary) !important;
+}
+.rc-slider .rc-slider-handle {
+  border: solid 2px #ff6f61;
+  opacity: 1 !important;
+  background-color: #fff !important;
+  width: 20px;
+  border-radius: 10px !important;
+  height: 20px;
+
+  margin-top: -9px;
+}
+
+.rc-slider .rc-slider-handle:hover {
+  border-color: #ff6f61;
+}
+
+.rc-slider .rc-slider-handle-dragging {
+  border-color: #ff6f61 !important;
+  box-shadow: none !important;
+}
+
+.rc-slider .rc-slider-track,
+.rc-slider .rc-slider-tracks {
+  background-color: #ff6f61;
+}
+.image-compare {
+  border-radius: 16px !important;
+  overflow: hidden;
+  button {
+    transition: 0s !important;
+  }
+}
+.zoom-magnifier-containing .drift-zoom-pane {
+  border-radius: 50%;
+  width: 150px !important;
+  height: 150px !important;
+  overflow: hidden;
+}
+// .swiper-horizontal {
+//   height: 100%;
+//   .swiper-slide {
+//     height: auto !important;
+//     min-height: 100%;
+//   }
+// }
+.cursor-pointer {
+  cursor: pointer;
+}
+.tfSubscribeMsg {
+  display: none;
+  max-height: 0px;
+  // transition: 0.4s;
+  overflow: hidden;
+  &.active {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 180px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer-col-block .tf-collapse-content {
+    overflow-y: hidden;
+    display: block;
+    height: 0;
+    transition: 0.5s;
+  }
+}
+.home-phonecase {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.slider-fashion-1 .swiper-fade .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+}
+.thumbs-slider {
+  .flat-wrap-media-product {
+    .swiper {
+      height: 100% !important;
+      .item {
+        height: 100% !important;
+        img {
+          height: 100% !important;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.infiniteslider {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  animation: 1.85078s linear 0s infinite normal none running infiniteslide;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+@keyframes infiniteslide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-148.0625px, 0, 0);
+  }
+}
+
+// =============================================
+// Voice Search Button
+// =============================================
+
+.btn-voice-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: var(--primary, #ff6f61);
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  &--listening {
+    color: #e53935;
+    animation: voice-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes voice-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(229, 57, 53, 0);
+  }
+}
+
+// HeaderSearch: voice button sits left of .btn-search (~74px wide at right:6px)
+.tf-form-search .form-search .btn-voice-search {
+  right: 82px;
+}
+
+// SearchModal: voice button sits left of submit button (right:20px + icon 24px)
+.popup-search .form-search .btn-voice-search {
+  right: 52px;
+}

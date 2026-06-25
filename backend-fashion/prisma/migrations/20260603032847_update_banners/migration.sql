@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `banners` ADD COLUMN `col_class` VARCHAR(100) NULL,
+    ADD COLUMN `image_height` INTEGER NULL DEFAULT 939,
+    ADD COLUMN `image_width` INTEGER NULL DEFAULT 1920;
